@@ -65,7 +65,7 @@ public class BankersAlgorithm {
                 }             
             }
             
-            // if all done then break
+            // all done then break
             if(checkProcessDone(safeSequenceForCheck)){
                 break;
             }
@@ -86,23 +86,11 @@ public class BankersAlgorithm {
     }
     
     static void printSafeSequence(int[] safeSequence, int numberOfProcess){
+        System.out.print("Safe Sequence: ");
         for(int i=0; i<numberOfProcess; i++){
             System.out.print("p" + safeSequence[i] + "\t");
         }
-    }
-    
-    static void print1DArray(int[] arr, int n){
-        for(int i=0; i<n; i++){
-            System.out.print(arr[i] + "\t");
-        }
-    }
-    
-    static void print2DArray(int[][] arr, int n, int m){
-        for(int i=0; i<n; i++){
-            System.out.print(arr[i] + "\t");
-        }
-    }
-    
+    }    
     
     public static void main(String[] args) {
         // TODO code application logic here
@@ -122,7 +110,7 @@ public class BankersAlgorithm {
         int[] safeSequence = new int[numberOfProcess];
         
         // input resource
-        System.out.println("Enter number of resources in the system(sequentially): ");
+        System.out.println("Enter the "+ numberOfResource +" resources in the system: ");
         for(int i=0; i<numberOfResource; i++){
             resources[i] = (scanner.hasNext() == true ? scanner.nextInt():null);
         }
@@ -130,7 +118,7 @@ public class BankersAlgorithm {
         System.out.println();
         // input allocations
         for(int i=0; i<numberOfProcess; i++){
-            System.out.println("Enter allocated resource of process " + (i+1));
+            System.out.println("Enter allocated resource of process: " + (i+1));
             for(int j=0; j<numberOfResource; j++){
                 allocation[i][j] = (scanner.hasNext() == true ? scanner.nextInt():null);
             }
@@ -139,7 +127,7 @@ public class BankersAlgorithm {
         System.out.println();
         // input max need
         for(int i=0; i<numberOfProcess; i++){
-            System.out.println("Enter maximum resources needed of process " + (i+1));
+            System.out.println("Enter maximum resources needed of process: " + (i+1));
             for(int j=0; j<numberOfResource; j++){
                 maxNeed[i][j] = (scanner.hasNext() == true ? scanner.nextInt():null);
             }
